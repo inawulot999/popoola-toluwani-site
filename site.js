@@ -39,6 +39,19 @@
   tools.appendChild(menu);
   brand.after(tools);
 
+  function placeControls() {
+    if (window.innerWidth <= 760) {
+      if (theme.parentNode !== tools) tools.appendChild(theme);
+      if (menu.parentNode !== tools) tools.appendChild(menu);
+    } else {
+      var cta = nav.querySelector(".nav-cta") || nav.querySelector(".btn");
+      if (cta && cta.nextElementSibling !== theme) cta.after(theme);
+      else if (!cta && theme.parentNode !== nav) nav.appendChild(theme);
+      if (menu.parentNode !== tools) tools.appendChild(menu);
+      closeMenu();
+    }
+  }
+
   function closeMenu() {
     nav.classList.remove("is-open");
     menu.setAttribute("aria-expanded", "false");
@@ -46,6 +59,8 @@
     menu.title = "Open navigation menu";
     menu.innerHTML = iconMenu();
   }
+
+  placeControls();
 
   theme.addEventListener("click", function () {
     var dark = root.getAttribute("data-theme") !== "dark";
@@ -72,7 +87,5 @@
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") closeMenu();
   });
-  window.addEventListener("resize", function () {
-    if (window.innerWidth > 760) closeMenu();
-  });
+  window.addEventListener("resize", placeControls);
 }());
