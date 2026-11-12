@@ -110,3 +110,39 @@ body{min-width:320px;overflow-x:hidden}
  .actions .btn{width:100%}
 }
 @media(hover:none){.card:hover{transform:none;box-shadow:0 8px 24px rgba(22,44,73,.055)}}
+/* Accessible mobile navigation, theme switch, and dark colour palette */
+.header-tools{display:flex;align-items:center;gap:10px}
+.theme-toggle,.menu-toggle{width:48px;height:48px;border:1px solid #ded9ea;background:#fff;color:var(--navy);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;touch-action:manipulation}
+.theme-toggle svg,.menu-toggle svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.menu-toggle{display:none}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+:root[data-theme="dark"]{color-scheme:dark;--navy:#edf2f8;--blue:#b7d0f0;--gold:#d9bd78;--muted:#bec8d5;--line:#354255;--pale:#172131}
+:root[data-theme="dark"] body{background:#101722;color:var(--navy)}
+:root[data-theme="dark"] .site-header{background:rgba(16,23,34,.96);border-color:#2c3849}
+:root[data-theme="dark"] .hero-section,:root[data-theme="dark"] .about{background-color:#151f2e}
+:root[data-theme="dark"] .hero-art{background:linear-gradient(145deg,#253145,#1a2637 58%,#25384b);border-color:#39485b}
+:root[data-theme="dark"] .hero-monogram{background:#d9bd78;color:#10233f}
+:root[data-theme="dark"] .audience-tags span{background:#202c3c;border-color:#354255;color:#e3eaf3}
+:root[data-theme="dark"] .card,:root[data-theme="dark"] .contact-details,:root[data-theme="dark"] .cookie-notice{background:#182333;border-color:#354255;color:var(--navy)}
+:root[data-theme="dark"] .card p,:root[data-theme="dark"] .contact-details p{color:#bec8d5}
+:root[data-theme="dark"] .contact{background:#172131;color:var(--navy);border-color:#354255}
+:root[data-theme="dark"] .contact p{color:#bec8d5}
+:root[data-theme="dark"] .contact .email-btn,:root[data-theme="dark"] .contact .whatsapp-btn,:root[data-theme="dark"] .btn.secondary{background:#202c3c!important;color:#edf2f8!important;border-color:#45546a}
+:root[data-theme="dark"] .contact .btn.gold{background:#d9bd78;color:#10233f}
+:root[data-theme="dark"] .legal-note{background:#242a32;border-color:#d9bd78;color:#e1e6ed}
+:root[data-theme="dark"] .theme-toggle,:root[data-theme="dark"] .menu-toggle{background:#1c2838;color:#eaf0f7;border-color:#48566b}
+:root[data-theme="dark"] .social-links a{color:#c1d8f5}
+:root[data-theme="dark"] .popoola-form input,:root[data-theme="dark"] .popoola-form select,:root[data-theme="dark"] .popoola-form textarea{background:#111b28;color:#f0f3f8;border-color:#536176}
+@media(max-width:760px){
+  .site-header{display:flex;align-items:center;justify-content:space-between}
+  .header-tools{margin-left:auto}
+  .menu-toggle{display:inline-flex;border-color:#c7a65a;color:var(--blue)}
+  .theme-toggle,.menu-toggle{width:50px;height:50px}
+  .nav{display:none}
+  .nav.is-open{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:8px 0 2px;border-top:1px solid var(--line);margin-top:7px}
+  .nav.is-open a{justify-content:space-between;width:100%;min-height:56px;padding:10px 4px;border-bottom:1px solid var(--line);background:transparent;color:var(--navy);font-size:18px;text-align:left}
+  .nav.is-open a:not(.btn)::after{content:"›";font-size:26px;color:var(--muted);line-height:1}
+  .nav.is-open .btn{margin:12px 0 4px;justify-content:center;background:var(--blue);color:#fff}
+  :root[data-theme="dark"] .nav.is-open a{color:#edf2f8;border-color:#344155}
+  :root[data-theme="dark"] .nav.is-open .btn{background:#d9bd78;color:#10233f}
+}
