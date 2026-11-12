@@ -146,3 +146,37 @@ body{min-width:320px;overflow-x:hidden}
   :root[data-theme="dark"] .nav.is-open a{color:#edf2f8;border-color:#344155}
   :root[data-theme="dark"] .nav.is-open .btn{background:#d9bd78;color:#10233f}
 }
+/* Brand and layout refinement */
+:root{--navy:#112b4a;--blue:#1b426d;--gold:#c5a45c;--muted:#5c6878;--line:#e4e6e8;--pale:#f7f6f2}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.65;letter-spacing:.005em}
+.site-header{min-height:78px;box-shadow:0 2px 12px rgba(17,43,74,.035)}
+.brand{display:grid;grid-template-columns:40px auto;grid-template-rows:auto auto;column-gap:11px;align-items:center;font-size:16px;letter-spacing:-.02em}
+.brand:before{content:"PT";grid-column:1;grid-row:1/3;width:40px;height:40px;display:grid;place-items:center;border-radius:9px;background:var(--navy);color:#fff;font:700 13px Georgia,serif;letter-spacing:.04em;border-bottom:2px solid var(--gold)}
+.brand small{grid-column:2;grid-row:2;margin-top:2px;font-size:9px;letter-spacing:.09em}
+.nav{gap:8px}
+.nav a:not(.btn){padding:9px 10px;border-radius:6px;color:#34445a;transition:background-color .16s ease,color .16s ease}
+.nav a:not(.btn):hover{background:#eeece6;color:var(--navy)}
+.nav .btn,.btn{font-weight:650;letter-spacing:.01em;box-shadow:0 3px 8px rgba(17,43,74,.12)}
+.nav .btn{margin-left:5px}
+.hero-section{border-bottom-color:#e5e1d7}
+.hero-copy .eyebrow,.eyebrow{letter-spacing:.12em}
+.hero h1{font-weight:680;letter-spacing:-.052em}
+.hero h1 em{font-family:Georgia,serif;font-weight:400}
+.card{box-shadow:0 8px 26px rgba(22,44,73,.045);border-color:#e8e6e0}
+.card:hover{border-color:#d7c89f}
+.section-title{font-weight:680}
+.contact{background:linear-gradient(120deg,#f6f4ee,#fbfaf7)}
+.site-footer{border-top:1px solid var(--line);margin-top:12px}
+:root[data-theme="dark"] .brand:before{background:#d9bd78;color:#10233f}
+:root[data-theme="dark"] .nav a:not(.btn){color:#d8e2ee}
+:root[data-theme="dark"] .nav a:not(.btn):hover{background:#263448;color:#fff}
+:root[data-theme="dark"] .contact{background:#172131}
+:root[data-theme="dark"] .site-footer{border-color:#354255}
+@media(max-width:760px){
+ .site-header{min-height:0}
+ .brand{font-size:15px}
+ .nav.is-open a:not(.btn){padding:8px 6px}
+ .nav.is-open .nav-cta{margin:12px 0 4px}
+ .hero h1{font-weight:680}
+ .section-title{letter-spacing:-.035em}
+}
