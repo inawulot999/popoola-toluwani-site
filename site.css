@@ -180,3 +180,54 @@ body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,san
  .hero h1{font-weight:680}
  .section-title{letter-spacing:-.035em}
 }
+/* Dark theme contrast and colour harmony corrections */
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --navy:#edf2f8;
+  --blue:#c1d8f4;
+  --gold:#dec37d;
+  --muted:#c0cad7;
+  --line:#354356;
+  --pale:#172333;
+}
+:root[data-theme="dark"] body{background:#101722;color:#edf2f8}
+:root[data-theme="dark"] .hero h1,:root[data-theme="dark"] .section-title,:root[data-theme="dark"] h1,:root[data-theme="dark"] h2,:root[data-theme="dark"] h3{color:#f1f4f8}
+:root[data-theme="dark"] .hero h1 em{color:#e0c37b}
+:root[data-theme="dark"] .eyebrow{color:#d8bd78}
+:root[data-theme="dark"] .hero-section,:root[data-theme="dark"] .about{
+  background-color:#151f2d;
+  background-image:linear-gradient(rgba(193,216,244,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(193,216,244,.045) 1px,transparent 1px);
+}
+:root[data-theme="dark"] .hero-art{background:linear-gradient(145deg,#263449,#1c293b 58%,#293b50);border-color:#42536a}
+:root[data-theme="dark"] .hero-art:before{border-color:#dec37b66}
+:root[data-theme="dark"] .art-caption{color:#f1f4f8}
+:root[data-theme="dark"] .art-seal{color:#e0c37b}
+:root[data-theme="dark"] .art-lines i{background:#dce7f633}
+:root[data-theme="dark"] .hero-monogram{background:#dec37b;color:#15243a}
+:root[data-theme="dark"] .audience-tags span{background:#202d3e;border-color:#39495e;color:#e7edf5}
+:root[data-theme="dark"] .card,:root[data-theme="dark"] .contact-details,:root[data-theme="dark"] .cookie-notice{
+  background:#192637;border-color:#39495d;color:#edf2f8;box-shadow:0 8px 24px rgba(0,0,0,.18)
+}
+:root[data-theme="dark"] .card p,:root[data-theme="dark"] .about-grid p,:root[data-theme="dark"] .steps p,:root[data-theme="dark"] .contact-details p{color:#c3cedb}
+:root[data-theme="dark"] .card-icon,:root[data-theme="dark"] .step-number{background:#28384c;color:#e0c37b;box-shadow:0 4px 12px rgba(0,0,0,.22)}
+:root[data-theme="dark"] .card:hover{border-color:#8f794c}
+:root[data-theme="dark"] .about li,:root[data-theme="dark"] .steps article{border-color:#3b4a5e}
+:root[data-theme="dark"] .contact{background:#172333;color:#edf2f8;border-color:#354356}
+:root[data-theme="dark"] .contact p{color:#c3cedb}
+:root[data-theme="dark"] .btn,:root[data-theme="dark"] .nav .btn,:root[data-theme="dark"] .nav.is-open .btn{
+  background:#dec37d!important;color:#172333!important;border:1px solid #dec37d;box-shadow:0 4px 14px rgba(0,0,0,.25)
+}
+:root[data-theme="dark"] .btn:hover,:root[data-theme="dark"] .nav .btn:hover{background:#ecd99f!important;border-color:#ecd99f}
+:root[data-theme="dark"] .btn.secondary,:root[data-theme="dark"] .contact .email-btn,:root[data-theme="dark"] .contact .whatsapp-btn{
+  background:#223247!important;color:#f1f4f8!important;border:1px solid #52657d
+}
+:root[data-theme="dark"] .contact .btn.gold{background:#dec37d!important;color:#172333!important}
+:root[data-theme="dark"] .legal-note{background:#242c37;border-left-color:#dec37d;color:#e4eaf1}
+:root[data-theme="dark"] .site-footer{border-color:#354356;color:#c0cad7}
+:root[data-theme="dark"] .social-links a,:root[data-theme="dark"] .text-link{color:#c1d8f4}
+:root[data-theme="dark"] .theme-toggle,:root[data-theme="dark"] .menu-toggle{background:#1a2636;color:#e0c37b;border-color:#4a5b72}
+:root[data-theme="dark"] .popoola-form input,:root[data-theme="dark"] .popoola-form select,:root[data-theme="dark"] .popoola-form textarea{background:#111b28;color:#f1f4f8;border-color:#526176}
+:root[data-theme="dark"] .popoola-form .form-status{background:#1a302c;color:#d9f0e6;border-color:#5d9a7e}
+:root[data-theme="dark"] .popoola-form .form-error{background:#3a2224;color:#ffe5e5;border-color:#d57979}
+:root[data-theme="dark"] .cookie-notice button{background:#dec37d;color:#172333;border-color:#dec37d}
+:root[data-theme="dark"] .cookie-notice button+button{background:#223247;color:#f1f4f8;border-color:#52657d}
