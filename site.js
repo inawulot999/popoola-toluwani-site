@@ -175,8 +175,11 @@
       item.classList.add("reveal-on-scroll");
       revealTargets.push(item);
     });
-    document.querySelectorAll(".grid .card, .steps article, .audience-tags span").forEach(function (item, index) {
+    document.querySelectorAll(".grid .card").forEach(function (item, index) {
       item.style.setProperty("--stagger-delay", Math.min(index * 100, 500) + "ms");
+    });
+    document.querySelectorAll(".steps article").forEach(function (item, index) {
+      item.style.setProperty("--stagger-delay", index * 100 + "ms");
     });
     root.classList.add("motion-ready");
     var observer = new IntersectionObserver(function (entries) {
