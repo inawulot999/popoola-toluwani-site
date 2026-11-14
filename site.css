@@ -226,8 +226,48 @@ body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,san
 :root[data-theme="dark"] .site-footer{border-color:#354356;color:#c0cad7}
 :root[data-theme="dark"] .social-links a,:root[data-theme="dark"] .text-link{color:#c1d8f4}
 :root[data-theme="dark"] .theme-toggle,:root[data-theme="dark"] .menu-toggle{background:#1a2636;color:#e0c37b;border-color:#4a5b72}
-:root[data-theme="dark"] .popoola-form input,:root[data-theme="dark"] .popoola-form sMethodInvocationException: 
-Line |
-   2 |  … hub-pages-site\site.css'); [Console]::Write($s.Substring(24000,2882))
-     |                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-     | Exception calling "Substring" with "2" argument(s): "Index and length must refer to a location within the string. (Parameter 'length')"
+:root[data-theme="dark"] .popoola-form input,:root[data-theme="dark"] .popoola-form select,:root[data-theme="dark"] .popoola-form textarea{background:#111b28;color:#f1f4f8;border-color:#526176}
+:root[data-theme="dark"] .popoola-form .form-status{background:#1a302c;color:#d9f0e6;border-color:#5d9a7e}
+:root[data-theme="dark"] .popoola-form .form-error{background:#3a2224;color:#ffe5e5;border-color:#d57979}
+:root[data-theme="dark"] .cookie-notice button{background:#dec37d;color:#172333;border-color:#dec37d}
+:root[data-theme="dark"] .cookie-notice button+button{background:#223247;color:#f1f4f8;border-color:#52657d}
+.header-tools{display:none}.nav .theme-toggle{flex:0 0 48px;margin-left:6px}
+@media(max-width:760px){.header-tools{display:flex}.nav .theme-toggle{display:none}}
+
+/* Subtle motion for a smoother browsing experience */
+@keyframes pt-rise-in{
+  from{opacity:0;transform:translate3d(0,14px,0)}
+  to{opacity:1;transform:translate3d(0,0,0)}
+}
+@keyframes pt-menu-in{
+  from{opacity:0;transform:translate3d(0,-6px,0)}
+  to{opacity:1;transform:translate3d(0,0,0)}
+}
+body,.site-header,.hero-section,.hero-art,.card,.about,.contact,.contact-details,.legal-note,.theme-toggle,.menu-toggle,.nav a,.btn,.social-links a{
+  transition:background-color .24s ease,color .24s ease,border-color .24s ease,box-shadow .24s ease;
+}
+.hero-copy{animation:pt-rise-in .65s cubic-bezier(.2,.7,.25,1) both}
+.hero-art{animation:pt-rise-in .72s .1s cubic-bezier(.2,.7,.25,1) both}
+.audience-tags{animation:pt-rise-in .6s .14s cubic-bezier(.2,.7,.25,1) both}
+.card{animation:pt-rise-in .58s cubic-bezier(.2,.7,.25,1) both}
+.grid .card:nth-child(2){animation-delay:.06s}
+.grid .card:nth-child(3){animation-delay:.12s}
+.grid .card:nth-child(4){animation-delay:.18s}
+.grid .card:nth-child(5){animation-delay:.24s}
+.grid .card:nth-child(6){animation-delay:.30s}
+.steps article{animation:pt-rise-in .55s cubic-bezier(.2,.7,.25,1) both}
+.steps article:nth-child(2){animation-delay:.08s}
+.steps article:nth-child(3){animation-delay:.16s}
+.nav.is-open>a{animation:pt-menu-in .2s ease both}
+.nav.is-open>a:nth-child(2){animation-delay:.025s}
+.nav.is-open>a:nth-child(3){animation-delay:.05s}
+.nav.is-open>a:nth-child(4){animation-delay:.075s}
+.nav.is-open>a:nth-child(5){animation-delay:.1s}
+.btn,.theme-toggle,.menu-toggle{transition:transform .18s ease,background-color .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease}
+@media(hover:hover){
+  .btn:hover,.theme-toggle:hover,.menu-toggle:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(17,43,74,.16)}
+  :root[data-theme="dark"] .btn:hover,:root[data-theme="dark"] .theme-toggle:hover,:root[data-theme="dark"] .menu-toggle:hover{box-shadow:0 6px 18px rgba(0,0,0,.28)}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-delay:0ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
