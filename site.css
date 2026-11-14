@@ -335,4 +335,9 @@ html{scroll-behavior:smooth;scroll-padding-top:110px}
  .page-enter,.page-entered,.page-leaving{opacity:1;transition:none}
 }
 /* Let the header size respond to its scrolled compact state. */
-@media(prefers-reduced-motion:no-preference){.site-header{height:auto}}
+@media(prefers-reduced-motion:no-preference){.site-header{height:auto}}/* About page portrait: adjust max-width for the photo size and object-position for crop. */
+.about-profile{display:grid;grid-template-columns:minmax(180px,240px) minmax(0,640px);gap:32px;align-items:center;margin:20px 0 35px}
+.about-profile img{display:block;width:100%;aspect-ratio:1;object-fit:cover;object-position:center;border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 32px rgba(16,35,63,.12)}
+.about-profile .intro{margin:0}
+:root[data-theme="dark"] .about-profile img{border-color:#354356;box-shadow:0 12px 32px rgba(0,0,0,.28)}
+@media(max-width:760px){.about-profile{grid-template-columns:minmax(0,1fr);gap:20px}.about-profile img{width:min(100%,240px)}}
