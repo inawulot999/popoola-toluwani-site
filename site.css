@@ -347,4 +347,16 @@ html{scroll-behavior:smooth;scroll-padding-top:110px}
 .about-profile-copy h2{font:600 clamp(20px,2.2vw,25px)/1.25 Manrope,Arial,sans-serif;letter-spacing:-.02em;margin:0 0 14px}
 .about-profile-copy p{color:var(--muted);font-size:15px;line-height:1.75;margin:0 0 13px}
 .about-profile-copy p:last-child{margin-bottom:0}
-@media(max-width:900px){.about-profile-copy{max-width:680px;margin:0 auto}.about-profile-copy h2{font-size:22px}}
+@media(max-width:900px){.about-profile-copy{max-width:680px;margin:0 auto}.about-profile-copy h2{font-size:22px}}/* Keep the header quote action readable in the light colour scheme. */
+:root:not([data-theme="dark"]) .site-header .nav .nav-cta,:root:not([data-theme="dark"]) .site-header .nav .nav-cta:visited{background:#112b4a!important;color:#fff!important;border:1px solid #112b4a!important}
+:root:not([data-theme="dark"]) .site-header .nav .nav-cta:hover{background:#1b426d!important;border-color:#1b426d!important}
+/* Photo treatment for the homepage hero; keep the photo full-bleed and the caption legible. */
+.hero-art.hero-photo{height:clamp(300px,34vw,400px);min-height:0;padding:0;display:block;position:relative;isolation:isolate;overflow:hidden;background:#dce3e9;border:1px solid #d8d6cf;border-radius:14px}
+.hero-art.hero-photo:before{content:none}
+.hero-art.hero-photo>img{position:absolute;inset:0;z-index:-1;display:block;width:100%;height:100%;object-fit:cover;object-position:center 48%}
+.hero-photo-caption{position:absolute;left:18px;right:18px;bottom:18px;z-index:1;display:flex;align-items:center;gap:13px;width:max-content;max-width:calc(100% - 36px);padding:13px 16px;background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.72);border-radius:10px;box-shadow:0 8px 28px rgba(12,26,45,.2);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.hero-photo .hero-monogram{flex:0 0 54px;width:54px;height:54px;font-size:20px}
+.hero-photo .art-caption{color:#112b4a;font-size:19px}
+.hero-photo-credit{position:absolute;right:12px;top:10px;z-index:1;padding:4px 8px;border-radius:999px;background:rgba(16,35,63,.68);color:#fff;font-size:10px;line-height:1.4;letter-spacing:.02em}
+@media(max-width:760px){.hero-art.hero-photo{height:auto;min-height:0;aspect-ratio:4/3}.hero-photo-caption{left:12px;bottom:12px;gap:10px;padding:10px 12px;max-width:calc(100% - 24px)}.hero-photo .hero-monogram{flex-basis:46px;width:46px;height:46px;font-size:18px}.hero-photo .art-caption{font-size:17px}.hero-photo-credit{top:9px;right:9px}}
+:root[data-theme="dark"] .hero-art.hero-photo{background:#243145;border-color:#43546c}
