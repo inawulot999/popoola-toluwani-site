@@ -343,4 +343,8 @@ html{scroll-behavior:smooth;scroll-padding-top:110px}
 @media(max-width:760px){.about-profile{grid-template-columns:minmax(0,1fr);gap:20px}.about-profile img{width:min(100%,240px)}}/* Profile portrait sizing: show the complete square image at a readable size. */
 .about-profile{grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:clamp(24px,5vw,56px);align-items:center}
 .about-profile img{display:block;width:min(100%,360px);height:auto;aspect-ratio:auto;object-fit:contain;object-position:center;justify-self:center}
-@media(max-width:900px){.about-profile{grid-template-columns:minmax(0,1fr);gap:24px}.about-profile img{width:min(100%,360px);margin:0 auto}}
+@media(max-width:900px){.about-profile{grid-template-columns:minmax(0,1fr);gap:24px}.about-profile img{width:min(100%,360px);margin:0 auto}}.about-profile-copy{max-width:680px}
+.about-profile-copy h2{font:600 clamp(20px,2.2vw,25px)/1.25 Manrope,Arial,sans-serif;letter-spacing:-.02em;margin:0 0 14px}
+.about-profile-copy p{color:var(--muted);font-size:15px;line-height:1.75;margin:0 0 13px}
+.about-profile-copy p:last-child{margin-bottom:0}
+@media(max-width:900px){.about-profile-copy{max-width:680px;margin:0 auto}.about-profile-copy h2{font-size:22px}}
