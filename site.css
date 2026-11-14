@@ -334,3 +334,5 @@ html{scroll-behavior:smooth;scroll-padding-top:110px}
  .scroll-progress{will-change:auto}
  .page-enter,.page-entered,.page-leaving{opacity:1;transition:none}
 }
+/* Let the header size respond to its scrolled compact state. */
+@media(prefers-reduced-motion:no-preference){.site-header{height:auto}}
