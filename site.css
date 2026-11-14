@@ -271,3 +271,66 @@ body,.site-header,.hero-section,.hero-art,.card,.about,.contact,.contact-details
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-delay:0ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+/* Motion controls: tweak these tokens to change speed, easing, and brand accents. */
+:root{
+  --motion-fast:180ms;
+  --motion-page:300ms;
+  --motion-reveal:700ms;
+  --motion-ease:cubic-bezier(.2,.7,.25,1);
+  --motion-gold:#c5a45c;
+}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+@media(prefers-reduced-motion:no-preference){
+  /* IntersectionObserver reveals are once-only; content remains readable to assistive tech. */
+  .reveal-on-scroll{opacity:0;transform:translateY(30px);transition:opacity var(--motion-reveal) ease-out,transform var(--motion-reveal) var(--motion-ease)}
+  .reveal-on-scroll.is-revealed{opacity:1;transform:translateY(0)}
+  .grid .card.reveal-on-scroll,.steps article.reveal-on-scroll,.audience-tags span.reveal-on-scroll{transition-delay:var(--stagger-delay,0ms)}
+  /* Home hero sequence: heading, highlighted word, subtext, then calls to action. */
+  .hero-motion-ready .hero h1{animation:pt-fade-rise 650ms var(--motion-ease) both}
+  .hero-motion-ready .hero h1 em{position:relative;white-space:nowrap}
+  .hero-motion-ready .hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.02em;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left center;animation:pt-underline 650ms 460ms var(--motion-ease) forwards}
+  .hero-motion-ready .hero-copy>p:not(.hero-note){animation:pt-fade-rise 650ms 220ms var(--motion-ease) both}
+  .hero-motion-ready .hero-copy .actions>a:nth-child(1){animation:pt-fade-rise 520ms 420ms var(--motion-ease) both}
+  .hero-motion-ready .hero-copy .actions>a:nth-child(2){animation:pt-fade-rise 520ms 520ms var(--motion-ease) both}
+  .hero-motion-ready .hero-copy .hero-note{animation:pt-fade-rise 560ms 620ms var(--motion-ease) both}
+  .hero-motion-ready .hero-art{animation:pt-fade-rise 720ms 160ms var(--motion-ease) both}
+  .hero-motion-ready .audience-tags span{animation:pt-fade-rise 520ms var(--audience-delay,0ms) var(--motion-ease) both}
+  /* Override the earlier first-pass load animations with scroll-triggered reveals. */
+  .motion-ready .hero-copy,.motion-ready .hero-art,.motion-ready .audience-tags,.motion-ready .card,.motion-ready .steps article{animation:none}
+  /* Header state changes are transform-only; blur is a small, static shadow treatment. */
+  .site-header{transition:transform 240ms var(--motion-ease),min-height 240ms ease,background-color 240ms ease,box-shadow 240ms ease}
+  .site-header.is-scrolled{min-height:66px;box-shadow:0 5px 22px rgba(17,43,74,.10);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+  .site-header.is-hidden{transform:translateY(-110%)}
+  /* Smooth underline follows the current page or Home section in view. */
+  .nav{position:relative}
+  .nav-indicator{position:absolute;bottom:2px;left:0;height:2px;width:0;background:var(--gold);opacity:0;pointer-events:none;transition:transform 320ms var(--motion-ease),width 320ms var(--motion-ease),opacity 180ms ease}
+  .nav a[aria-current="page"],.nav a[aria-current="location"]{color:var(--navy);font-weight:700}
+  .social-links a{transition:transform var(--motion-fast) ease,color var(--motion-fast) ease}
+  .social-links a:hover{transform:scale(1.1);color:var(--gold)}
+  .social-links a:active{transform:scale(.96)}
+  .text-link span[aria-hidden="true"]{display:inline-block;transition:transform var(--motion-fast) var(--motion-ease)}
+  .text-link:hover span[aria-hidden="true"]{transform:translateX(4px)}
+  .card{transition:transform var(--motion-fast) var(--motion-ease),box-shadow var(--motion-fast) ease,border-color var(--motion-fast) ease}
+  .card:active{transform:translateY(-2px)}
+  .page-enter{opacity:.01}
+  .page-entered{opacity:1;transition:opacity var(--motion-page) ease-out}
+  .page-leaving{opacity:0;transition:opacity var(--motion-page) ease-in}
+  .back-to-top{position:fixed;z-index:60;right:20px;bottom:calc(18px + env(safe-area-inset-bottom));opacity:0;visibility:hidden;pointer-events:none;transform:translateY(8px);transition:opacity 220ms ease,transform 220ms var(--motion-ease),visibility 220ms;display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:var(--navy);color:#fff;box-shadow:0 6px 20px rgba(17,43,74,.16);text-decoration:none}
+  .back-to-top.is-visible{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+  :root[data-theme="dark"] .back-to-top{background:#dec37d;color:#172333;border-color:#dec37d}
+  .scroll-progress{position:fixed;z-index:120;top:0;left:0;width:100%;height:3px;transform:scaleX(0);transform-origin:left center;background:var(--gold);pointer-events:none;will-change:transform}
+}
+@keyframes pt-fade-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pt-underline{to{transform:scaleX(1)}}
+@media(max-width:760px){
+ .site-header.is-scrolled{min-height:0}
+ .nav-indicator{display:none}
+ .back-to-top{right:14px;bottom:calc(14px + env(safe-area-inset-bottom));font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .reveal-on-scroll{opacity:1!important;transform:none!important;transition:none!important}
+ .nav-indicator{transition:none}
+ .scroll-progress{will-change:auto}
+ .page-enter,.page-entered,.page-leaving{opacity:1;transition:none}
+}
