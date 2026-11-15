@@ -359,4 +359,8 @@ html{scroll-behavior:smooth;scroll-padding-top:110px}
 .hero-photo .art-caption{color:#112b4a;font-size:19px}
 .hero-photo-credit{position:absolute;right:12px;top:10px;z-index:1;padding:4px 8px;border-radius:999px;background:rgba(16,35,63,.68);color:#fff;font-size:10px;line-height:1.4;letter-spacing:.02em}
 @media(max-width:760px){.hero-art.hero-photo{height:auto;min-height:0;aspect-ratio:4/3}.hero-photo-caption{left:12px;bottom:12px;gap:10px;padding:10px 12px;max-width:calc(100% - 24px)}.hero-photo .hero-monogram{flex-basis:46px;width:46px;height:46px;font-size:18px}.hero-photo .art-caption{font-size:17px}.hero-photo-credit{top:9px;right:9px}}
-:root[data-theme="dark"] .hero-art.hero-photo{background:#243145;border-color:#43546c}
+:root[data-theme="dark"] .hero-art.hero-photo{background:#243145;border-color:#43546c}/* Use the supplied team artwork in the hero without cropping its built-in branding. */
+.hero-art.hero-photo{height:auto;min-height:0;aspect-ratio:3/2;padding:0;display:block;position:relative;isolation:isolate;overflow:hidden;background:#e8eaf0;border:1px solid #d8d6cf;border-radius:14px}
+.hero-art.hero-photo:before{content:none}
+.hero-art.hero-photo>img{position:absolute;inset:0;z-index:0;display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+@media(max-width:760px){.hero-art.hero-photo{height:auto;min-height:0;aspect-ratio:3/2}}
