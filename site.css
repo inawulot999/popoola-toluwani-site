@@ -372,4 +372,24 @@ html{scroll-behavior:smooth;scroll-padding-top:110px}
 .brand-copy{display:flex;flex-direction:column;align-items:flex-start;min-width:0;line-height:1.2}
 .brand-name{display:block;line-height:1.25}
 .brand-copy small{display:block;grid-column:auto;grid-row:auto;margin:4px 0 0;font-size:9px;letter-spacing:.09em;white-space:nowrap}
-@media(max-width:760px){.brand{gap:9px;white-space:normal}.brand-mark{flex-basis:42px;width:42px;height:42px}.brand-copy small{font-size:8px;letter-spacing:.05em}}
+@media(max-width:760px){.brand{gap:9px;white-space:normal}.brand-mark{flex-basis:42px;width:42px;height:42px}.brand-copy small{font-size:8px;letter-spacing:.05em}}/* Mobile header: lead with the business name and keep the mark beside it. */
+@media(max-width:760px){
+ .site-header{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:8px;align-items:center}
+ .brand{grid-column:1;display:flex;flex-direction:row;align-items:center;justify-content:flex-start;gap:8px;min-width:0;min-height:50px;white-space:nowrap}
+ .brand-copy{order:1;min-width:0}
+ .brand-name{font-size:15px;line-height:1.2}
+ .brand-copy small{margin:3px 0 0;font-size:8px;letter-spacing:.045em;white-space:nowrap}
+ .brand-mark{order:2;flex:0 0 34px;width:34px;height:34px}
+ .header-tools{grid-column:2;display:flex;align-items:center;gap:6px;margin-left:0}
+ .theme-toggle,.menu-toggle{width:42px;height:42px}
+ .nav{grid-column:1/-1;width:100%}
+}
+@media(max-width:360px){
+ .site-header{column-gap:6px}
+ .brand{gap:6px}
+ .brand-name{font-size:14px}
+ .brand-copy small{font-size:7.5px;letter-spacing:.025em}
+ .brand-mark{flex-basis:30px;width:30px;height:30px}
+ .header-tools{gap:4px}
+ .theme-toggle,.menu-toggle{width:40px;height:40px}
+}
