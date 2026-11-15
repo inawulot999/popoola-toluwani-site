@@ -392,4 +392,19 @@ html{scroll-behavior:smooth;scroll-padding-top:110px}
  .brand-mark{flex-basis:30px;width:30px;height:30px}
  .header-tools{gap:4px}
  .theme-toggle,.menu-toggle{width:40px;height:40px}
+}/* Place the logo immediately after the name on mobile; keep the descriptor below. */
+@media(max-width:760px){
+ .brand{display:grid;grid-template-columns:minmax(0,max-content) 32px;grid-template-rows:auto auto;align-items:center;align-content:center;justify-content:start;column-gap:7px;row-gap:2px;width:max-content;max-width:calc(100vw - 166px);min-width:0;flex-direction:initial}
+ .brand-copy{display:contents;order:initial}
+ .brand-name{grid-column:1;grid-row:1;white-space:nowrap;font-size:15px}
+ .brand-copy small{grid-column:1;grid-row:2;margin:2px 0 0;font-size:7.5px;line-height:1.1;letter-spacing:.035em;white-space:nowrap}
+ .brand-mark{grid-column:2;grid-row:1;order:initial;align-self:center;flex:none;width:32px;height:32px}
+}
+@media(max-width:360px){
+ .brand{max-width:calc(100vw - 144px);grid-template-columns:minmax(0,1fr) 28px;column-gap:5px}
+ .brand-name{font-size:13px}
+ .brand-copy small{font-size:6.5px;letter-spacing:.01em}
+ .brand-mark{width:28px;height:28px}
+ .theme-toggle,.menu-toggle{width:40px;height:40px}
+ .header-tools{gap:4px}
 }
