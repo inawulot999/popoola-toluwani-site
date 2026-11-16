@@ -466,3 +466,8 @@ html{scroll-behavior:smooth;scroll-padding-top:110px}
 @media(max-width:900px){.site-footer .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;}}
 @media(max-width:600px){.site-footer .footer-grid{grid-template-columns:1fr;gap:28px;width:calc(100% - 34px);}.site-footer .social-links{gap:10px;}}
 @media(prefers-reduced-motion:reduce){.site-footer .social-links a{transition:none}.site-footer .social-links a:hover,.site-footer .social-links a:active{transform:none}}
+
+/* Match the supplied wide teamwork image to the hero frame without letterboxing. */
+.hero-art.hero-photo{aspect-ratio:16/9;}
+.hero-art.hero-photo>img{object-fit:cover;}
+
