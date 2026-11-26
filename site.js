@@ -1,6 +1,26 @@
 (function () {
   "use strict";
 
+  // Vercel Web Analytics is privacy-friendly and only runs on deployed sites,
+  // not local previews or the parallel GitHub Pages host.
+  function loadVercelWebAnalytics() {
+    var hostname = window.location.hostname;
+    var isLocal = /^(localhost|127(?:\\.\\d+){3}|\\[::1\\])$/i.test(hostname);
+    var isGitHubPages = /(^|\\.)github\\.io$/i.test(hostname);
+    if (isLocal || isGitHubPages || document.getElementById("vercel-web-analytics")) return;
+
+    window.va = window.va || function () {
+      (window.vaq = window.vaq || []).push(arguments);
+    };
+    var script = document.createElement("script");
+    script.id = "vercel-web-analytics";
+    script.async = true;
+    script.src = "/_vercel/insights/script.js";
+    document.head.appendChild(script);
+  }
+
+  loadVercelWebAnalytics();
+
   var root = document.documentElement;
   var reducedQuery = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
   var reduceMotion = !!(reducedQuery && reducedQuery.matches);
