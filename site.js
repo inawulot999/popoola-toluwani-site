@@ -5,8 +5,8 @@
   // not local previews or the parallel GitHub Pages host.
   function loadVercelWebAnalytics() {
     var hostname = window.location.hostname;
-    var isLocal = /^(localhost|127(?:\\.\\d+){3}|\\[::1\\])$/i.test(hostname);
-    var isGitHubPages = /(^|\\.)github\\.io$/i.test(hostname);
+    var isLocal = /^(localhost|127(?:\.\d{1,3}){3}|\[::1\])$/i.test(hostname);
+    var isGitHubPages = /(^|\.)github\.io$/i.test(hostname);
     if (isLocal || isGitHubPages || document.getElementById("vercel-web-analytics")) return;
 
     window.va = window.va || function () {
