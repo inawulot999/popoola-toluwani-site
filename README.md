@@ -18,7 +18,7 @@ GitHub Pages is available for public repositories on GitHub Free. The published 
 - GitHub Pages serves static files. It cannot run the WordPress theme, PHP plugin, or database-backed enquiry form.
 - The Contact page uses the WhatsApp link and mailto buttons instead. The email button opens the visitor’s configured email app.
 - Prices are quote-based. No testimonials, fake client outcomes, personal biography, street address or response-time promise are included.
-- Analytics is not installed. Add it only after creating an analytics account and updating the privacy notice and consent flow as needed.
+- Vercel Web Analytics is included in the shared site script. After Web Analytics is enabled in the Vercel project and the site is redeployed, it can report anonymized visits and page views. GitHub Pages does not provide these Vercel analytics reports.
 
 ## Update content
 
