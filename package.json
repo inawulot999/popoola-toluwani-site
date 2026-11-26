@@ -1,0 +1,13 @@
+{
+  "name": "popoola-toluwani-site",
+  "version": "1.0.0",
+  "description": "Academic & Professional Services website with Vercel Web Analytics",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'This is a static HTML site. Open index.html in your browser or use a local server.'",
+    "build": "echo 'No build process required for static site.'"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  }
+}
